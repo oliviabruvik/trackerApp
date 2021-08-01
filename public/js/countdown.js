@@ -12,12 +12,15 @@ const startCountdown = (minutes) => {
     let stopButton = document.querySelector("#stop-button");
     let secLeft = document.querySelector("#sec-left");
     let minLeft = document.querySelector("#min-left");
+    let progressBar = document.querySelector("#progress-bar");
 
     startButton.classList.add("hidden");
     stopButton.classList.remove("hidden");
 
     minLeft.innerHTML = Math.floor(timeLeft / 60);
     secLeft.innerHTML = Math.floor(timeLeft % 60);
+
+    let progressInterval = 1/timeLeft * 100;
 
     intervalID = window.setInterval(reduceTime, 1000);
     
@@ -31,6 +34,7 @@ const startCountdown = (minutes) => {
             timeLeft -= 1;
             minLeft.innerHTML = Math.floor(timeLeft / 60);
             secLeft.innerHTML = Math.floor(timeLeft % 60);
+            progressBar.value += progressInterval;
         }
     }
 };
