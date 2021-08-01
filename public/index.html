@@ -69,9 +69,9 @@
             <div class="column">
                 <progress class="progress is-success" value="25" max="100">15%</progress>
                 <button class="button" id="start-button" onclick="startCountdown(1)">Start</button>
-                <button class="button hidden" id="stop-button" onclick="togglePause()">Stop</button>
-                <button class="button hidden" id="resume-button" onclick="togglePause()">Resume</button>
-                <button class="button hidden" id="reset-button" onclick="startCountdown(1)">Reset</button>
+                <button class="button hidden" id="stop-button" onclick="togglePause(false)">Stop</button>
+                <button class="button hidden" id="resume-button" onclick="togglePause(false)">Resume</button>
+                <button class="button hidden" id="reset-button" onclick="togglePause(true)">Skip</button>
            </div>
         </div>
 
