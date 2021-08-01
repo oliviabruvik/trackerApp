@@ -71,12 +71,56 @@
                 <button class="button" id="start-button" onclick="startCountdown(1)">Start</button>
                 <button class="button hidden" id="stop-button" onclick="togglePause(false)">Stop</button>
                 <button class="button hidden" id="resume-button" onclick="togglePause(false)">Resume</button>
-                <button class="button hidden" id="reset-button" onclick="togglePause(true)">Skip</button>
+                <button class="button hidden" id="reset-button" onclick="togglePause(true, 5)">Skip to the Next Break</button>
+                <button class="button hidden" id="skip-to-session" onclick="togglePause(true, 25)">Skip to the Next Session</button>
            </div>
+        </div>
+
+        <div class="modal" id="return-modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Congrats! You finished this session!</p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <input class="input" type="text" placeholder="How was today's session?" id="session-input">
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-success" id="continue-button" onclick="startCountdown(5)">Continue with a Break</button>
+                    <button class="button" id="return-button">Return to Tasks</button>
+                </footer>
+            </div>
         </div>
 
         <br>
 
+        <!-- <div class="dropdown is-active">
+            <div class="dropdown-trigger">
+                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span>Rate this session</span>
+                    <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="dropdown-menu is-active" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                        Great
+                    </a>
+                    <a class="dropdown-item">
+                        Good
+                    </a>
+                    <a href="#" class="dropdown-item is-active">
+                        Okay
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Next time will be better.
+                    </a>
+                </div>
+            </div>
+        </div> -->
         
         <!-- <div class="card">
             <header class="card-header">
